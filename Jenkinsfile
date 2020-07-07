@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'cd ./example-react; npm install .'
+        sh 'pwd; ls -la'
       }
     }
 
