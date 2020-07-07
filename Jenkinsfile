@@ -10,7 +10,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'cd ./example-react; npm install .'
-        sh 'pwd; ls -la'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'cd ./example-react; npm run test -- --coverage --watchAll=false'
       }
     }
 
